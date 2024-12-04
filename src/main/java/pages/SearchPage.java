@@ -6,9 +6,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 
-public class SearchPage extends BasePage{
+public class SearchPage extends BasePage {
 
-    public SearchPage(WebDriver driver){
+    public SearchPage(WebDriver driver) {
         setDriver(driver);
         driver.get("https://ilcarro.web.app/search");
         PageFactory.initElements(new AjaxElementLocatorFactory(driver, 10), this);
@@ -19,8 +19,13 @@ public class SearchPage extends BasePage{
     @FindBy(xpath = "//a[text()=' Sign up ']")
     WebElement btnSignUp;
 
-    public void clickBtnSignUp(){
+
+    public void clickBtnSignUp() {
         btnSignUp.click();
+    }
+
+    public void clickBtnLogin() {
+        btnLogin.click();
     }
 
 }

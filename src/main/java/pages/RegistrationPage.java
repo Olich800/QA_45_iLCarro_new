@@ -53,6 +53,7 @@ public class RegistrationPage extends BasePage {
     }
 
     public boolean isPopUpMessagePresent() {
+
         return isTextInElementPresent(popUpMessage, "You are logged in success");
     }
 }

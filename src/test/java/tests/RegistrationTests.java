@@ -14,12 +14,12 @@ public class RegistrationTests extends ApplicationManager {
     RegistrationPage registrationPage;
 
     @Test
-    public void registrationPositiveTest(){
-        int i  = new Random().nextInt(1000)+1000;
+    public void registrationPositiveTest() {
+        int i = new Random().nextInt(1000) + 1000;
         UserDtoLombok user = UserDtoLombok.builder()
                 .name("Bob")
                 .lastName("Doe")
-                .email(i+"bob_mail@mail.com")
+                .email(i + "bob_mail@mail.com")
                 .password("Pass123!")
                 .build();
         new SearchPage(getDriver()).clickBtnSignUp();
