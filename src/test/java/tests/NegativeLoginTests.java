@@ -21,7 +21,8 @@ public class NegativeLoginTests extends ApplicationManager {
         loginPage = new LoginPage(getDriver());
         loginPage.typeLoginForm(user);
         loginPage.clickBtnYalla();
-        Assert.assertFalse(loginPage.isPopupMassagePresent());
+        Assert.assertTrue(loginPage.isPopupMassagePresent());
+
 
 
     }

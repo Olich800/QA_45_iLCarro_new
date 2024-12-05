@@ -23,7 +23,7 @@ public class LoginPage extends BasePage {
     WebElement btnYalla;
     @FindBy(xpath = "//h2[@class='message']")
     WebElement popUpMessage;
-    @FindBy(xpath = "//h1[@class='title']")
+    @FindBy(xpath = "//h2[@class='message']")
     WebElement popupMessage;
 
 
