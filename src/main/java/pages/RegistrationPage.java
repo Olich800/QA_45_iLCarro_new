@@ -1,12 +1,15 @@
 package pages;
 
 import dto.UserDtoLombok;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class RegistrationPage extends BasePage {
 
@@ -29,6 +32,11 @@ public class RegistrationPage extends BasePage {
     WebElement btnYalla;
     @FindBy(xpath = "//h2[@class='message']")
     WebElement popUpMessage;
+    @FindBy(xpath = "//div[@class = 'error']")
+    WebElement errorMessageEmail;
+    @FindBy(xpath = "//div[@class = 'error']")
+    WebElement errorMessagePassword;
+
 
     public void typeRegistrationForm(UserDtoLombok user) {
         inputName.sendKeys(user.getName());
@@ -55,5 +63,14 @@ public class RegistrationPage extends BasePage {
     public boolean isPopUpMessagePresent() {
 
         return isTextInElementPresent(popUpMessage, "You are logged in success");
+    }
+
+
+    public boolean validateErrorMessageEmail(String text) {
+        return isElementContainsText(errorMessageEmail, text);
+
+    }
+    public boolean validateErrorMessagePassword(String text){
+        return isElementContainsText(errorMessagePassword, text);
     }
 }

@@ -22,6 +22,9 @@ public class BasePage {
 
         return element.getText().contains(text);
     }
+public boolean isElementContainsText(WebElement element, String text){
+  return element.getText().contains(text);
 
+}
 
 }
